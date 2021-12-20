@@ -5,7 +5,12 @@ import sys
 from googletrans import Translator
 
 path= os.path.dirname(os.path.abspath(__file__))
-problem_num = int(sys.stdin.readline())
+
+if len(sys.argv) != 2:
+    print("실행방법 .\\baekjoon_parsing.exe 문제번호")
+    sys.exit()
+
+problem_num = sys.argv[1]
 
 
 class autoBaekjoon:

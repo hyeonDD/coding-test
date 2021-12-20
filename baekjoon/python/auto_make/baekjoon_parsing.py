@@ -6,11 +6,13 @@ from googletrans import Translator
 
 path= os.path.dirname(os.path.abspath(__file__))
 
-if len(sys.argv) != 2:
+""" if len(sys.argv) != 2:
     print("실행방법 .\\baekjoon_parsing.exe 문제번호")
     sys.exit()
+"""
 
-problem_num = sys.argv[1]
+# problem_num = sys.argv[1]
+problem_num = int(sys.stdin.readline())
 
 
 class autoBaekjoon:
@@ -22,7 +24,7 @@ class autoBaekjoon:
         self.soup = BeautifulSoup(html.content, 'html.parser')
 
     def parsing(self, id):                
-        datas = self.soup.select(f'{id}')        
+        datas = self.soup.select(f'{id}')
         return [i.text for i in datas]
     
     def mkdir(self,title_name):

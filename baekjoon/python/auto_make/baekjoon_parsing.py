@@ -11,8 +11,8 @@ path= os.path.dirname(os.path.abspath(__file__))
     sys.exit()
 """
 
-# problem_num = sys.argv[1]
-problem_num = int(sys.stdin.readline())
+problem_num = sys.argv[1]
+# problem_num = int(input())
 
 
 class autoBaekjoon:

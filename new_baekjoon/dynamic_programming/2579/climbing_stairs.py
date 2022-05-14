@@ -1,22 +1,11 @@
-import sys
-input = sys.stdin.readline
- 
-def solve(stair, n):
-    dp = []
-    dp.append(stair[0])
-    for i in range(1, 3):
-        if i == 1:
-            dp.append(max(dp[i-1] + stair[i], stair[i]))
-            continue
-        dp.append(max(dp[i-2] + stair[i], stair[i-1] + stair[i]))
- 
-    for i in range(3, n):
-        # i번째 계단으로 올라오기 위해 max(직전 계단을 밟은 경우, 직전 계단을 밟지 않은 경우)
-        dp.append(max(stair[i] + stair[i-1] + dp[i-3], stair[i] + dp[i-2]))
-    # print(dp)
-    print(dp[-1])
-
-n = int(input().strip())
-stair = [int(input()) for _ in range(n)]
-
-solve(stair, n)
+n = int(input())
+s = [0 for i in range(301)]
+dp = [0 for i in range(301)]
+for i in range(n):
+    s[i] = int(input())
+dp[0] = s[0]
+dp[1] = s[0] + s[1]
+dp[2] = max(s[0], s[1]) + s[2]
+for i in range(3, n):
+    dp[i] = max(dp[i-3] + s[i-1], dp[i-2]) + s[i]
+print(dp[n-1])

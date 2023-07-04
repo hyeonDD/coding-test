@@ -1,2 +1,2 @@
-# coding_test
-coding_test_repository
+# coding-test
+coding test Repository
